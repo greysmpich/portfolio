@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Code from "../icons/Code.astro";
+---
+
+<Layout
+  title="Portfolio de Grecia Mendieta - Desarrolladora Front-End y programadora web"
+>
+  <main class="px-8">
+    <SectionContainer id="sobremi" class="pt-32 pb-20">
+      <img
+        class="rounded-full size-20 mb-4"
+        src="https://avatars.githubusercontent.com/u/142179844?v=4"
+        alt="greysmpich photo"
+      />
+      <h1 class="text-2xl md:text-4xl font-bold flex flex-row flex-wrap gap-x-4 pb-4 lg:pb-6 max-w-[700px]">
+        Hola, soy Grecia Mendieta <a
+          href="https://www.linkedin.com/in/greysmpich/"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-3xl opacity-90 flex flex-row gap-x-2 items-center text-wrap">
+        👩🏽‍💻 Desarrolladora Front-End. De Ciudad de México, México. Apasionada por transformar ideas en líneas de código 🚀.
+        <!-- <img
+          src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/1f1f2-1f1fd.svg"
+          alt="emoji-flag-mx"
+          class="size-7"
+        /> -->
+      </h2>
+      <h2 class="text-2xl opacity-90">
+       
+      </h2>
+
+      <nav class="flex flex-wrap mt-4 gap-x-4">
+        <SocialPill href="https://www.linkedin.com/in/greysmpich/">
+          <LinkedInIcon class="size-3 md:size-5" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/greysmpich">
+          <GitHubIcon class="size-3 md:size-5" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:greys.mpich@gmail.com">
+          <MailIcon class="size-3 md:size-6" />
+          greys.mpichgmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="text-xl lg:text-3xl font-bold lg:font-semibold mb-6 flex gap-x-3 items-center">
+        <Code class="size-8 " />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>

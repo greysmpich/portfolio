@@ -1,0 +1,81 @@
+---
+import ProjectsItem from "./ProjectsItem.astro";
+const PROJECTS = [
+    {
+        date: 'January 2024 - February 2024',
+        title: 'Burguer Queen API Client',
+        description: 'Aplicación para tablets que optimiza la toma de pedidos y la gestión eficiente de la cocina de un restaurante de comida rápida.',
+        link: '',
+        github: 'https://github.com/greysmpich/Burguer-Queen-API-Client',
+        image: 'https://via.placeholder.com/300x200',
+        tags: ['Angular', 'TypeScript', 'Jasmine', 'Api REST'],
+    },
+    {
+        date: 'November 2023 - January 2024',
+        title: 'Fictasy Hub',
+        description: 'Sitio web que presenta un catálogo de películas de ciencia ficción y fantasía con opciones tanto de filtrado como de ordenado.',
+        link: '',
+        github: 'https://github.com/greysmpich/fictasy-hub',
+        image: 'https://via.placeholder.com/300x200',
+        tags: ['Angular', 'TypeScript', 'Jest', 'Vercel', 'Api REST'],
+    },
+    {
+        date: 'November 2023',
+        title: '@greysmpich/markdown-links',
+        description: 'Librería Node.js que valida y analiza enlaces en archivos Markdown, proporcionando estadísticas para un análisis más detallado.',
+        link: '',
+        github: 'https://github.com/greysmpich/markdown-links',
+        image: 'https://via.placeholder.com/300x200',
+        tags: ['Node.js', 'npm', 'Jest'],
+    },
+    {
+        date: 'October 2023 - November 2023',
+        title: 'Catgram',
+        description: 'Red social para los amantes de los gatos. Permite el registro de usuarios con cuenta de Google o correo y contraseña. Los usuarios pueden compartir posts con texto e imagen, dar like a posts de otros usuarios y editar o eliminar posts propios.',
+        link: '',
+        github: 'https://github.com/greysmpich/DEV011-social-network-catgram',
+        image: 'https://via.placeholder.com/300x200',
+        tags: ['JavaScript', 'HTML', 'CSS', 'Jest', 'Firebase', 'Firestore'],
+    },
+    {
+        date: 'September 2023 - October 2023',
+        title: 'PkeFindX',
+        description: 'Aplicación web para jugadores de Pokémon Go. Muestra cartas con información relevante de los pokémon de las regiones de Kanto y Johto. Permite filtrar por tipo, fortalezas y debilidades, y buscar por nombre.',
+        link: '',
+        github: 'https://github.com/greysmpich/DEV011-data-lovers-PokeFindX',
+        image: 'https://via.placeholder.com/300x200',
+        tags: ['JavaScript', 'HTML', 'CSS', 'Jest'],
+    },
+    {
+        date: 'August 2023 - September 2023',
+        title: 'Text Analyzer',
+        description: 'Aplicación web que permite analizar texto, ofreciendo información sobre recuentos de palabras, caracteres, caracteres sin espacios, números, la suma de los números presentes y la longitud media de las palabras.',
+        link: '',
+        github: 'https://github.com/greysmpich/DEV011-text-analyzer-proy1',
+        image: 'https://via.placeholder.com/300x200',
+        tags: ['JavaScript', 'HTML', 'CSS'],
+        
+    }
+]
+
+---
+<ol class="relative border-s border-pink-greys ml-4 dark:border-gray-700"> 
+    {
+        PROJECTS.map(({title, description, tags, image}) =>   (
+            <article>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <ul>
+                    {tags.map(tag => (
+                        <li>{tag}</li>
+                    ))}
+                </ul>
+                <img src={image} alt={`Captura de pantalla de la aplicación web ${image}`}>
+            </article>
+        // <li class="mb-10 ms-6"> 
+        //     <ProjectsItem {...project}/>
+        // </li>
+        ))                 
+    }
+</ol>
+
