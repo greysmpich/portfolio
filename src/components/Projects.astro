@@ -1,80 +1,151 @@
 ---
-import ProjectsItem from "./ProjectsItem.astro";
+//import ProjectsItem from "./ProjectsItem.astro";
+import Angular from '../icons/Angular.astro';
+import TypeScript from '../icons/TypeScript.astro';
+import Jasmine from '../icons/Jasmine.astro';
+import Jest from '../icons/Jest.astro';
+import Vercel from '../icons/Vercel.astro';
+import NodeJS from '../icons/NodeJS.astro';
+import npm from '../icons/npm.astro';
+import JavaScript from '../icons/JavaScript.astro';
+import HTML from '../icons/HTML.astro';
+import CSS from '../icons/CSS.astro';
+import Firebase from '../icons/Firebase.astro';
+import Firestore from '../icons/Firestore.astro';
+
+const TAGS = {
+JavaScript: {
+    name: 'JavaScript',
+    class: 'bg-[#fff19b] text-black font-bold',
+    icon: JavaScript,
+},
+HTML: {
+    name: 'HTML',
+    class: 'bg-[#f7caa8] text-[#dc4a29] font-bold',
+    icon: HTML,
+},
+CSS: {
+    name: 'CSS',
+    class: 'bg-[#bacad8] text-[#3469ba] font-bold',
+    icon: CSS,
+},
+Angular: {
+    name: 'Angular',
+    class: 'bg-[#f3ceff] text-[#c026d3] font-bold',
+    icon: Angular,
+},
+TypeScript: {
+    name: 'TypeScript',
+    class: 'bg-[#dbeafe] text-black font-bold',
+    icon: TypeScript,
+},
+NodeJS: {
+    name: 'Node.js',
+    class: 'bg-[#d7ffd3] text-[#43853D] font-bold',
+    icon: NodeJS,
+},
+Jasmine: {
+    name: 'Jasmine',
+    class: 'bg-[#e9d5ff] text-[#3b0764] font-bold',
+    icon: Jasmine,
+},
+Jest: {
+    name: 'Jest',
+    class: 'bg-[#e5d0d6] text-[#954058] font-bold',
+    icon: Jest,
+},
+Firebase: {
+    name: 'Firebase',
+    class: 'bg-[#fff0b5] text-[#efa71f] font-bold',
+    icon: Firebase,
+},
+Firestore: {
+    name: 'Fistore',
+    class: 'bg-[#767676] text-[#ffffff] font-bold',
+    icon: Firestore,
+},
+Vercel: {
+    name: 'Vercel',
+    class: 'bg-[#000000] text-white font-bold',
+    icon: Vercel,
+},
+npm: {
+    name: 'npm',
+    class: 'bg-[#f2dede] text-[#c53636] font-bold',
+    icon: npm,
+}
+}
+
 const PROJECTS = [
     {
-        date: 'January 2024 - February 2024',
         title: 'Burguer Queen API Client',
         description: 'Aplicación para tablets que optimiza la toma de pedidos y la gestión eficiente de la cocina de un restaurante de comida rápida.',
-        link: '',
+        link: 'https://burguer-queen-api-client-35jn.vercel.app/login',
         github: 'https://github.com/greysmpich/Burguer-Queen-API-Client',
-        image: 'https://via.placeholder.com/300x200',
-        tags: ['Angular', 'TypeScript', 'Jasmine', 'Api REST'],
+        image: '/projects/BQAC-Mockup-pink-green.webp', 
+        tags: [ TAGS.Angular, TAGS.TypeScript, TAGS.Jasmine],
     },
     {
-        date: 'November 2023 - January 2024',
         title: 'Fictasy Hub',
         description: 'Sitio web que presenta un catálogo de películas de ciencia ficción y fantasía con opciones tanto de filtrado como de ordenado.',
-        link: '',
+        link: 'https://fictasy-hub.vercel.app/home',
         github: 'https://github.com/greysmpich/fictasy-hub',
-        image: 'https://via.placeholder.com/300x200',
-        tags: ['Angular', 'TypeScript', 'Jest', 'Vercel', 'Api REST'],
+        image: '/projects/fictasy-hub.webp',
+        tags: [TAGS.Angular, TAGS.TypeScript, TAGS.Jest, TAGS.Vercel],
     },
     {
-        date: 'November 2023',
         title: '@greysmpich/markdown-links',
         description: 'Librería Node.js que valida y analiza enlaces en archivos Markdown, proporcionando estadísticas para un análisis más detallado.',
-        link: '',
+        link: 'https://www.npmjs.com/package/@greysmpich/markdown-links',
         github: 'https://github.com/greysmpich/markdown-links',
         image: 'https://via.placeholder.com/300x200',
-        tags: ['Node.js', 'npm', 'Jest'],
+        tags: [TAGS.NodeJS, TAGS.npm, TAGS.Jest],
     },
     {
-        date: 'October 2023 - November 2023',
         title: 'Catgram',
         description: 'Red social para los amantes de los gatos. Permite el registro de usuarios con cuenta de Google o correo y contraseña. Los usuarios pueden compartir posts con texto e imagen, dar like a posts de otros usuarios y editar o eliminar posts propios.',
         link: '',
         github: 'https://github.com/greysmpich/DEV011-social-network-catgram',
         image: 'https://via.placeholder.com/300x200',
-        tags: ['JavaScript', 'HTML', 'CSS', 'Jest', 'Firebase', 'Firestore'],
+        tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS, TAGS.Jest, TAGS.Firebase, TAGS.Firestore],
     },
     {
-        date: 'September 2023 - October 2023',
         title: 'PkeFindX',
         description: 'Aplicación web para jugadores de Pokémon Go. Muestra cartas con información relevante de los pokémon de las regiones de Kanto y Johto. Permite filtrar por tipo, fortalezas y debilidades, y buscar por nombre.',
         link: '',
         github: 'https://github.com/greysmpich/DEV011-data-lovers-PokeFindX',
         image: 'https://via.placeholder.com/300x200',
-        tags: ['JavaScript', 'HTML', 'CSS', 'Jest'],
+        tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS, TAGS.Jest],
     },
     {
-        date: 'August 2023 - September 2023',
         title: 'Text Analyzer',
         description: 'Aplicación web que permite analizar texto, ofreciendo información sobre recuentos de palabras, caracteres, caracteres sin espacios, números, la suma de los números presentes y la longitud media de las palabras.',
         link: '',
         github: 'https://github.com/greysmpich/DEV011-text-analyzer-proy1',
         image: 'https://via.placeholder.com/300x200',
-        tags: ['JavaScript', 'HTML', 'CSS'],
-        
+        tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS],
     }
 ]
 
 ---
-<ol class="relative border-s border-pink-greys ml-4 dark:border-gray-700"> 
+<ol class="relative ml-4"> 
     {
         PROJECTS.map(({title, description, tags, image}) =>   (
-            <article>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <ul>
+            <article class="mt-8">
+                <h3 class="text-2xl text-black font-semibold mb-2">{title}</h3>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class="flex gap-x-4 flex-row flex-wrap gap-y-2 mb-4">
                     {tags.map(tag => (
-                        <li>{tag}</li>
+                        <li>
+                            <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                                <tag.icon class="size-4 self-center" />
+                                {tag.name}
+                            </span>
+                        </li>
                     ))}
                 </ul>
-                <img src={image} alt={`Captura de pantalla de la aplicación web ${image}`}>
+                <img class="rounded-xl shadow-2xl shadow-black/30" src={image} alt={`Captura de pantalla de la aplicación web ${image}`}>
             </article>
-        // <li class="mb-10 ms-6"> 
-        //     <ProjectsItem {...project}/>
-        // </li>
         ))                 
     }
 </ol>
