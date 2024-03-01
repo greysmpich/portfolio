@@ -8,7 +8,7 @@ export default {
 			'pink-greys': '#FF0D75',
 			'lightPink-greys': '#FACED9',
 			'white': '#f0fdf4',
-			"black": "#27272a"
+			"black": "#27272a",			
 		},
 		extend: {},
 	},
