@@ -1,152 +1,192 @@
 ---
-//import ProjectsItem from "./ProjectsItem.astro";
-import Angular from '../icons/Angular.astro';
-import TypeScript from '../icons/TypeScript.astro';
-import Jasmine from '../icons/Jasmine.astro';
-import Jest from '../icons/Jest.astro';
-import Vercel from '../icons/Vercel.astro';
-import NodeJS from '../icons/NodeJS.astro';
-import npm from '../icons/npm.astro';
-import JavaScript from '../icons/JavaScript.astro';
-import HTML from '../icons/HTML.astro';
-import CSS from '../icons/CSS.astro';
-import Firebase from '../icons/Firebase.astro';
-import Firestore from '../icons/Firestore.astro';
+import Angular from "../icons/Angular.astro";
+import TypeScript from "../icons/TypeScript.astro";
+import Jasmine from "../icons/Jasmine.astro";
+import Jest from "../icons/Jest.astro";
+import Vercel from "../icons/Vercel.astro";
+import NodeJS from "../icons/NodeJS.astro";
+import npm from "../icons/npm.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import HTML from "../icons/HTML.astro";
+import CSS from "../icons/CSS.astro";
+import Firebase from "../icons/Firebase.astro";
+import Firestore from "../icons/Firestore.astro";
+import LinkButton from "../components/LinkButton.astro";
+import GitHub from "../icons/GitHub.astro";
+import Link from "../icons/Link.astro";
 
 const TAGS = {
-JavaScript: {
-    name: 'JavaScript',
-    class: 'bg-[#fff19b] text-black font-bold',
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-[#fff19b] text-black font-bold",
     icon: JavaScript,
-},
-HTML: {
-    name: 'HTML',
-    class: 'bg-[#f7caa8] text-[#dc4a29] font-bold',
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#f7caa8] text-[#dc4a29] font-bold",
     icon: HTML,
-},
-CSS: {
-    name: 'CSS',
-    class: 'bg-[#bacad8] text-[#3469ba] font-bold',
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#bacad8] text-[#3469ba] font-bold",
     icon: CSS,
-},
-Angular: {
-    name: 'Angular',
-    class: 'bg-[#f3ceff] text-[#c026d3] font-bold',
+  },
+  Angular: {
+    name: "Angular",
+    class: "bg-[#f3ceff] text-[#c026d3] font-bold",
     icon: Angular,
-},
-TypeScript: {
-    name: 'TypeScript',
-    class: 'bg-[#dbeafe] text-black font-bold',
+  },
+  TypeScript: {
+    name: "TypeScript",
+    class: "bg-[#dbeafe] text-black font-bold",
     icon: TypeScript,
-},
-NodeJS: {
-    name: 'Node.js',
-    class: 'bg-[#d7ffd3] text-[#43853D] font-bold',
+  },
+  NodeJS: {
+    name: "Node.js",
+    class: "bg-[#d7ffd3] text-[#43853D] font-bold",
     icon: NodeJS,
-},
-Jasmine: {
-    name: 'Jasmine',
-    class: 'bg-[#e9d5ff] text-[#3b0764] font-bold',
+  },
+  Jasmine: {
+    name: "Jasmine",
+    class: "bg-[#e9d5ff] text-[#3b0764] font-bold",
     icon: Jasmine,
-},
-Jest: {
-    name: 'Jest',
-    class: 'bg-[#e5d0d6] text-[#954058] font-bold',
+  },
+  Jest: {
+    name: "Jest",
+    class: "bg-[#e5d0d6] text-[#954058] font-bold",
     icon: Jest,
-},
-Firebase: {
-    name: 'Firebase',
-    class: 'bg-[#fff0b5] text-[#efa71f] font-bold',
+  },
+  Firebase: {
+    name: "Firebase",
+    class: "bg-[#fff0b5] text-[#efa71f] font-bold",
     icon: Firebase,
-},
-Firestore: {
-    name: 'Fistore',
-    class: 'bg-[#767676] text-[#ffffff] font-bold',
+  },
+  Firestore: {
+    name: "Fistore",
+    class: "bg-[#767676] text-[#ffffff] font-bold",
     icon: Firestore,
-},
-Vercel: {
-    name: 'Vercel',
-    class: 'bg-[#000000] text-white font-bold',
+  },
+  Vercel: {
+    name: "Vercel",
+    class: "bg-[#000000] text-white font-bold",
     icon: Vercel,
-},
-npm: {
-    name: 'npm',
-    class: 'bg-[#f2dede] text-[#c53636] font-bold',
+  },
+  npm: {
+    name: "npm",
+    class: "bg-[#f2dede] text-[#c53636] font-bold",
     icon: npm,
-}
-}
+  },
+};
 
 const PROJECTS = [
-    {
-        title: 'Burguer Queen API Client',
-        description: 'Aplicación para tablets que optimiza la toma de pedidos y la gestión eficiente de la cocina de un restaurante de comida rápida.',
-        link: 'https://burguer-queen-api-client-35jn.vercel.app/login',
-        github: 'https://github.com/greysmpich/Burguer-Queen-API-Client',
-        image: '/projects/BQAC-Mockup-pink-green.webp', 
-        tags: [ TAGS.Angular, TAGS.TypeScript, TAGS.Jasmine],
-    },
-    {
-        title: 'Fictasy Hub',
-        description: 'Sitio web que presenta un catálogo de películas de ciencia ficción y fantasía con opciones tanto de filtrado como de ordenado.',
-        link: 'https://fictasy-hub.vercel.app/home',
-        github: 'https://github.com/greysmpich/fictasy-hub',
-        image: '/projects/fictasy-hub.webp',
-        tags: [TAGS.Angular, TAGS.TypeScript, TAGS.Jest, TAGS.Vercel],
-    },
-    {
-        title: '@greysmpich/markdown-links',
-        description: 'Librería Node.js que valida y analiza enlaces en archivos Markdown, proporcionando estadísticas para un análisis más detallado.',
-        link: 'https://www.npmjs.com/package/@greysmpich/markdown-links',
-        github: 'https://github.com/greysmpich/markdown-links',
-        image: 'https://via.placeholder.com/300x200',
-        tags: [TAGS.NodeJS, TAGS.npm, TAGS.Jest],
-    },
-    {
-        title: 'Catgram',
-        description: 'Red social para los amantes de los gatos. Permite el registro de usuarios con cuenta de Google o correo y contraseña. Los usuarios pueden compartir posts con texto e imagen, dar like a posts de otros usuarios y editar o eliminar posts propios.',
-        link: '',
-        github: 'https://github.com/greysmpich/DEV011-social-network-catgram',
-        image: 'https://via.placeholder.com/300x200',
-        tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS, TAGS.Jest, TAGS.Firebase, TAGS.Firestore],
-    },
-    {
-        title: 'PkeFindX',
-        description: 'Aplicación web para jugadores de Pokémon Go. Muestra cartas con información relevante de los pokémon de las regiones de Kanto y Johto. Permite filtrar por tipo, fortalezas y debilidades, y buscar por nombre.',
-        link: '',
-        github: 'https://github.com/greysmpich/DEV011-data-lovers-PokeFindX',
-        image: 'https://via.placeholder.com/300x200',
-        tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS, TAGS.Jest],
-    },
-    {
-        title: 'Text Analyzer',
-        description: 'Aplicación web que permite analizar texto, ofreciendo información sobre recuentos de palabras, caracteres, caracteres sin espacios, números, la suma de los números presentes y la longitud media de las palabras.',
-        link: '',
-        github: 'https://github.com/greysmpich/DEV011-text-analyzer-proy1',
-        image: 'https://via.placeholder.com/300x200',
-        tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS],
-    }
-]
-
+  {
+    title: "Burguer Queen API Client",
+    description:
+      "Aplicación para tablets que optimiza la toma de pedidos y la gestión eficiente de la cocina de un restaurante de comida rápida.",
+    link: "https://burguer-queen-api-client-35jn.vercel.app/login",
+    github: "https://github.com/greysmpich/Burguer-Queen-API-Client",
+    image: "/projects/BQAC.webp",
+    tags: [TAGS.Angular, TAGS.TypeScript, TAGS.Jasmine],
+  },
+  {
+    title: "Fictasy Hub",
+    description:
+      "Sitio web que presenta un catálogo de películas de ciencia ficción y fantasía con opciones tanto de filtrado como de ordenado.",
+    link: "https://fictasy-hub.vercel.app/home",
+    github: "https://github.com/greysmpich/fictasy-hub",
+    image: "/projects/fictasy-hub.webp",
+    tags: [TAGS.Angular, TAGS.TypeScript, TAGS.Jest, TAGS.Vercel],
+  },
+  // {
+  //     title: '@greysmpich/markdown-links',
+  //     description: 'Librería Node.js que valida y analiza enlaces en archivos Markdown, proporcionando estadísticas para un análisis más detallado.',
+  //     link: 'https://www.npmjs.com/package/@greysmpich/markdown-links',
+  //     github: 'https://github.com/greysmpich/markdown-links',
+  //     image: 'https://via.placeholder.com/300x200',
+  //     tags: [TAGS.NodeJS, TAGS.npm, TAGS.Jest],
+  // },
+  {
+    title: "Catgram",
+    description:
+      "Red social para los amantes de los gatos. Permite el registro de usuarios con cuenta de Google o correo y contraseña. Los usuarios pueden compartir posts con texto e imagen, dar like a posts de otros usuarios y editar o eliminar posts propios.",
+    link: "https://catgram-fdb6c.web.app/",
+    github: "https://github.com/greysmpich/DEV011-social-network-catgram",
+    image: "/projects/catgram.webp",
+    tags: [
+      TAGS.JavaScript,
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.Jest,
+      TAGS.Firebase,
+      TAGS.Firestore,
+    ],
+  },
+  {
+    title: "PokeFindX",
+    description:
+      "Aplicación web para jugadores de Pokémon Go. Muestra cartas con información relevante de los pokémon de las regiones de Kanto y Johto. Permite filtrar por tipo, fortalezas y debilidades, y buscar por nombre.",
+    link: "https://greysmpich.github.io/DEV011-data-lovers-PokeFindX/",
+    github: "https://github.com/greysmpich/DEV011-data-lovers-PokeFindX",
+    image: "/projects/pokefindx.webp",
+    tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS, TAGS.Jest],
+  },
+  {
+    title: "Text Analyzer",
+    description:
+      "Aplicación web que permite analizar texto, ofreciendo información sobre recuentos de palabras, caracteres, caracteres sin espacios, números, la suma de los números presentes y la longitud media de las palabras.",
+    link: "https://greysmpich.github.io/DEV011-text-analyzer-proy1/",
+    github: "https://github.com/greysmpich/DEV011-text-analyzer-proy1",
+    image: "/projects/textAnalizer.webp",
+    tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS],
+  },
+];
 ---
-<ol class="relative ml-4"> 
-    {
-        PROJECTS.map(({title, description, tags, image}) =>   (
-            <article class="mt-8">
-                <h3 class="text-2xl text-black font-semibold mb-2">{title}</h3>
-                <p class="text-lg mb-4 text-pretty">{description}</p>
-                <ul class="flex gap-x-4 flex-row flex-wrap gap-y-2 mb-4">
-                    {tags.map(tag => (
-                        <li>
-                            <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
-                                <tag.icon class="size-4 self-center" />
-                                {tag.name}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
-                <img class="rounded-xl shadow-2xl shadow-black/30" src={image} alt={`Captura de pantalla de la aplicación web ${image}`}>
-            </article>
-        ))                 
-    }
-</ol>
 
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ title, description, tags, image, github, link }) => (
+      <article class="mt-8 flex flex-col gap-4 space-x-0 md:flex-row md:space-y-8">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl text-black font-semibold mb-2">{title}</h3>
+          <ul class="flex gap-x-4 flex-row flex-wrap gap-y-2 mb-4">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                >
+                  <tag.icon class="size-3 self-center" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="text-md mb-4 text-pretty">{description}</p>
+          <div>
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-5" />
+                  Código
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-5" />
+                  Sitio
+                </LinkButton>
+              )}
+          </div>
+        </div>
+        <div class="w-full mt-0 md:w-1/2">
+          <div class="flex flex-col align-items-center">
+            <img
+              class="rounded-xl shadow-2xl w-full md:mx-5 transition duration-500 ease-in-out hover:scale-110"
+              loading="lazy"
+              src={image}
+              alt={`Captura de pantalla de la aplicación web ${image}`}
+            />
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
