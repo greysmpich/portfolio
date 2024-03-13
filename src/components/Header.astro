@@ -1,8 +1,73 @@
-<header class="flex justify-center justify-around items-center bg-green-greys py-4 w-full xl:w-[1340px] mx-auto">
-    <nav class="flex flex-row gap-x-10 text-black font-semibold text-lg">
-        <a class="hover:text-pink-greys hover:underline" href="#top">Inicio</a>
-        <a href="#sobremi">Sobre mí</a>
-        <a class="hover:text-pink-greys hover:underline" href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+---
+const navItems = [
+    {
+      title: "Sobre mí",
+      label: "sobre-mi",
+      url: "/#sobre-mi",
+    },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "mailto:greys.mpich@gmail.com",
+  },
+]
+---
+<header id="header" class="flex sticky top-0 z-10 justify-around items-center bg-black py-4 w-full xl:w-[1340px] mx-auto">
+    <nav id="nav" class="flex rounded-full gap-x-10 text-green-greys font-bold text-md">
+        {
+            navItems.map((link) =>
+            <a 
+            class="transition section-link" 
+            href={link.url}
+            data-section={link.label}            
+            >
+            {link.title}
+            </a>
+            )
+        }
     </nav>
 </header>
+
+<script>
+    window.addEventListener('scroll', function(){
+        const header = document.getElementById('header');
+        const scrolled = window.scrollY;
+        const nav = document.getElementById('nav');
+        const sections = document.querySelectorAll('section');
+        const sectionLinks = document.querySelectorAll('.section-link');
+
+        if (scrolled > 0) {
+            header?.classList.add('bg-green-greys/90');
+            header?.classList.add('rounded-full');
+            nav?.classList.remove('text-green-greys');
+            nav?.classList.add('text-black');
+            
+        } else {
+            header?.classList.remove('bg-green-greys/90');
+            header?.classList.add('bg-black');
+            header?.classList.remove('rounded-full');
+            nav?.classList.remove('text-black');
+            nav?.classList.add('text-green-greys');
+        }     
+
+        sections.forEach(function(section) {
+            const sectionRect = section.getBoundingClientRect();
+            if(sectionRect.top <= window.innerHeight / 2 && sectionRect.bottom >= window.innerHeight / 2){
+                const sectionId = section.getAttribute('id');
+                sectionLinks.forEach(function(link){
+                    if(link.getAttribute('data-section') === sectionId){
+                        link.classList.add('text-pink-greys')
+                    } else {
+                        link.classList.remove('text-pink-greys')
+                    }
+                })
+            }
+        })
+
+    })
+</script>
