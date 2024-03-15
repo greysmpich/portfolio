@@ -55,17 +55,25 @@ const navItems = [
             nav?.classList.add('text-green-greys');
         }     
 
+        function updateUrl(sectionId:string|null){
+            const newUrl = window.location.pathname + '#' + sectionId;
+            window.history.pushState({}, '', newUrl)
+        }
+
         sections.forEach(function(section) {
             const sectionRect = section.getBoundingClientRect();
             if(sectionRect.top <= window.innerHeight / 2 && sectionRect.bottom >= window.innerHeight / 2){
                 const sectionId = section.getAttribute('id');
-                sectionLinks.forEach(function(link){
-                    if(link.getAttribute('data-section') === sectionId){
-                        link.classList.add('text-pink-greys')
-                    } else {
-                        link.classList.remove('text-pink-greys')
-                    }
-                })
+                    // currentSectionId = sectionId;
+                    sectionLinks.forEach(function(link){
+                        if(link.getAttribute('data-section') === sectionId){
+                            link.classList.add('text-pink-greys');
+                        } else {
+                            link.classList.remove('text-pink-greys')
+                        }
+                    })
+
+                    updateUrl(sectionId);
             }
         })
 
